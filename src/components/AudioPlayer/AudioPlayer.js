@@ -18,6 +18,7 @@ class AudioPlayer extends Component {
 
   static propTypes = {
     audioSrc: PropTypes.string.isRequired,
+    nbRepeat: PropTypes.number,
   };
 
   componentDidMount() {
@@ -25,10 +26,23 @@ class AudioPlayer extends Component {
     console.log("mounted");
     self.audio = document.createElement('audio');
     self.audio.src = this.props.audioSrc;
-    self.audio.play();
-    self.playing = true;
+    
+    
+    self.counter = this.props.nbRepeat;
+    console.log(self);
+    self.audio.addEventListener('ended', self.endOfAudio);
+
+    self.counter -= 1;
+    this.play();
   }
 
+  endOfAudio(){
+    console.log(self.counter)
+    if(self.counter != 0){
+      self.counter = self.counter - 1;
+      self.audio.play();
+    }
+  }
 
   play(){
     self.audio.play();

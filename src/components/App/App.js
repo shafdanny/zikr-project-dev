@@ -57,7 +57,7 @@ class App extends Component {
     return !this.props.error ? (
       <div>
         <Header />
-        <AudioPlayer audioSrc="https://shafiqdaniel.com/music/mzain.mp3"/>
+        <AudioPlayer audioSrc="https://shafiqdaniel.com/music/zikrdemo.mp3" nbRepeat='3'/>
         {this.props.children}
         <Feedback />
         <Footer />
