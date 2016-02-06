@@ -13,6 +13,7 @@ import s from './App.scss';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
+import AudioPlayer from '../AudioPlayer';
 
 class App extends Component {
 
@@ -56,6 +57,7 @@ class App extends Component {
     return !this.props.error ? (
       <div>
         <Header />
+        <AudioPlayer audioSrc="https://shafiqdaniel.com/music/mzain.mp3"/>
         {this.props.children}
         <Feedback />
         <Footer />
