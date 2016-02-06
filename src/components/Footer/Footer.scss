@@ -10,7 +10,7 @@
 @import '../variables.scss';
 
 .root {
-  background: #333;
+  background: transparent;
   color: #fff;
   position: absolute;
   bottom: 0;
@@ -19,7 +19,7 @@
 
 .container {
   margin: 0 auto;
-  padding: 20px 15px;
+  padding: 10px 15px;
   max-width: $max-content-width;
   text-align: center;
 }
