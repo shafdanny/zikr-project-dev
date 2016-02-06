@@ -31,6 +31,12 @@ const fileExists = filename => new Promise(resolve => {
 
 const router = new Router();
 
+router.get('/assets', 
+  function (req, res, next) {
+    res.json({message:'testing'})
+  }
+);
+
 router.get('/', async (req, res, next) => {
 
   try {

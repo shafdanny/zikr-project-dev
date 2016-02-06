@@ -30,8 +30,6 @@ const router = new Router(on => {
 
   on('/register', async () => <RegisterPage />);
 
-  on('/test', async () => <RegisterPage />);
-
   on('*', async (state) => {
     const response = await fetch(`/api/content?path=${state.path}`);
     const content = await response.json();
