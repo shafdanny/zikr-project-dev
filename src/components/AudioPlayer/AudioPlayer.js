@@ -21,21 +21,37 @@ class AudioPlayer extends Component {
   };
 
   componentDidMount() {
-    console.log("audio mounted");
-    console.log(this.props.audioSrc);
-
-    var audio = document.getElementById("audio").play();
-    audio.autoplay = false;
-    console.log(audio);
+    self = this;
+    console.log("mounted");
+    self.audio = document.createElement('audio');
+    self.audio.src = this.props.audioSrc;
+    self.audio.play();
+    self.playing = true;
   }
+
+
+  play(){
+    self.audio.play();
+    self.playing = true;
+  }
+
+  pause(){
+    self.audio.pause();
+    self.playing = false;
+  }
+
+  playPauseClick() {
+    if(self.playing)
+      self.pause();
+    else
+      self.play();
+  }
+
 
   render() {
     return (
       <div className={s.root}>
-        <audio id="audio">
-          <source type="audio/mpeg" src={this.props.audioSrc} >
-            Your browser does not support the audio element.</source>
-        </audio>
+        <button onClick={this.playPauseClick}>Stop</button>
         
       </div>
     );
