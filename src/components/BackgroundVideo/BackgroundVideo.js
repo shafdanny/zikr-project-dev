@@ -10,8 +10,7 @@
 import React, { Component } from 'react';
 import s from './BackgroundVideo.scss';
 import withStyles from '../../decorators/withStyles';
-import Link from '../Link';
-import Navigation from '../Navigation';
+
 
 @withStyles(s)
 class BackgroundVideo extends Component {
@@ -19,7 +18,9 @@ class BackgroundVideo extends Component {
   render() {
     return (
       <div className={s.root}>
-        
+        <video loop muted autoPlay poster="img/videoframe.jpg" className={s.root}>
+            <source src="https://zippy.gfycat.com/EnergeticHopefulEyas.webm" type="video/webm" />
+        </video>
       </div>
     );
   }

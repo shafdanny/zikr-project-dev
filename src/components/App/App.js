@@ -14,6 +14,7 @@ import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
 import AudioPlayer from '../AudioPlayer';
+import BackgroundVideo from "../BackgroundVideo";
 
 class App extends Component {
 
@@ -56,10 +57,9 @@ class App extends Component {
   render() {
     return !this.props.error ? (
       <div>
+        <BackgroundVideo />
         <Header />
         <AudioPlayer audioSrc="https://shafiqdaniel.com/music/zikrdemo.mp3" nbRepeat='3'/>
-        {this.props.children}
-        <Feedback />
         <Footer />
       </div>
     ) : this.props.children;

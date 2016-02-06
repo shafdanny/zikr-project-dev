@@ -17,7 +17,15 @@
  * Base styles
  * ========================================================================== */
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+
 html {
+  margin: 0;
+    height: 100%;
   color: #222;
   font-weight: 100;
   font-size: 1em; /* ~16px; */
