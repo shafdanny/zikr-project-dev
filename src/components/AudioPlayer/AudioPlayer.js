@@ -42,6 +42,9 @@ class AudioPlayer extends Component {
       self.counter = self.counter - 1;
       self.audio.play();
     }
+    else{
+      self.pause();
+    }
   }
 
   play(){

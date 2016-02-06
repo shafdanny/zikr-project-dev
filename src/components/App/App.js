@@ -59,7 +59,7 @@ class App extends Component {
       <div>
         <BackgroundVideo />
         <Header />
-        <AudioPlayer audioSrc="https://shafiqdaniel.com/music/zikrdemo.mp3" nbRepeat='3'/>
+        <AudioPlayer audioSrc="https://shafiqdaniel.com/music/zikrdemo.mp3" nbRepeat='1'/>
         <Footer />
       </div>
     ) : this.props.children;
