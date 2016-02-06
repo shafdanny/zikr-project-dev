@@ -10,34 +10,34 @@
 import React, { Component, PropTypes } from 'react';
 import s from './AudioPlayer.scss';
 import withStyles from '../../decorators/withStyles';
-import Link from '../Link';
-import Navigation from '../Navigation';
 
 @withStyles(s)
 class AudioPlayer extends Component {
+
 
   static propTypes = {
     audioSrc: PropTypes.string.isRequired,
     nbRepeat: PropTypes.number,
   };
 
+
   componentDidMount() {
     self = this;
     console.log("mounted");
     self.audio = document.createElement('audio');
+
     self.audio.src = this.props.audioSrc;
-    
-    
     self.counter = this.props.nbRepeat;
     console.log(self);
+    
     self.audio.addEventListener('ended', self.endOfAudio);
 
     self.counter -= 1;
-    this.play();
+    self.pause();
   }
 
   endOfAudio(){
-    console.log(self.counter)
+    console.log(self.counter);
     if(self.counter != 0){
       self.counter = self.counter - 1;
       self.audio.play();
@@ -47,25 +47,33 @@ class AudioPlayer extends Component {
   play(){
     self.audio.play();
     self.playing = true;
+    document.getElementById("btn").textContent = "Pause";
+
   }
 
   pause(){
     self.audio.pause();
     self.playing = false;
+    document.getElementById("btn").textContent = "Play";
   }
 
   playPauseClick() {
-    if(self.playing)
+    console.log("onClick, playing: "  + self.playing);
+    if(self.playing){
       self.pause();
-    else
+    }
+    else{
       self.play();
+    }
   }
 
 
+
   render() {
+    console.log("render " + this);
     return (
       <div className={s.root}>
-        <button onClick={this.playPauseClick}>Stop</button>
+        <button id="btn" onClick={this.playPauseClick}></button>
         
       </div>
     );
