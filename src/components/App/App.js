@@ -16,6 +16,7 @@ import Footer from '../Footer';
 import AudioPlayer from '../AudioPlayer';
 import BackgroundVideo from "../BackgroundVideo";
 import ControlPanelLayout from "../ControlPanelLayout";
+import ListItem from "../ListItem";
 
 class App extends Component {
 
@@ -63,6 +64,7 @@ class App extends Component {
         <Header />
         <AudioPlayer audioSrc="audio/zikrdemo.mp3" nbRepeat='1'/>
         <Footer />
+        <ListItem />
       </div>
     ) : this.props.children;
   }

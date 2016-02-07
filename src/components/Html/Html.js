@@ -53,6 +53,7 @@ class Html extends Component {
         <div id="app" dangerouslySetInnerHTML={{ __html: this.props.body }} />
         <script src={this.props.entry}></script>
         <script dangerouslySetInnerHTML={this.trackingCode()} />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       </body>
       </html>
     );
