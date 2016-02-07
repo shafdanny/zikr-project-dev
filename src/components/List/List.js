@@ -10,6 +10,7 @@
 import React, { Component, PropTypes } from 'react';
 import s from './List.scss';
 import withStyles from '../../decorators/withStyles';
+import ItemElement from '../ItemElement'
 
 @withStyles(s)
 class List extends Component {
@@ -22,10 +23,14 @@ class List extends Component {
   	render() {
 
 	    return (
-	      <div className="{s.root} {this.props.mediaType}">
+	      <div className={this.props.mediaType}>
 	      <ul>
 	     	{this.props.list.map(function(listValue){
-            return <li key={listValue.fileName}><a href="#">{listValue.fileName}</a></li>;
+	     		return ( 
+            		<li>
+            			<ItemElement name={listValue.fileName} type={listValue.type} />
+            		</li>
+            	);
           })}
 	      </ul>
 	      </div>

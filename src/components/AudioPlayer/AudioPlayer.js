@@ -21,15 +21,24 @@ class AudioPlayer extends Component {
     nbRepeat: PropTypes.number,
   };
 
+  // Always call this function before doing anything with audio.
+  // This is because the audio could be changed by another element.
+  updateAudio(){
+    self.audio = document.getElementById('audio-current');
+    console.log(self.audio);
+    self.audio.load();
+    console.log(self.audio);
+    var audiosource = $('audio').find('source')[0];
+  }
 
   componentDidMount() {
     self = this;
     console.log("mounted");
-    self.audio = document.createElement('audio');
+    
+    self.updateAudio();
 
-    self.audio.src = this.props.audioSrc;
+    //self.audio.src = this.props.audioSrc;
     self.counter = this.props.nbRepeat;
-    console.log(self);
     
     self.audio.addEventListener('ended', self.endOfAudio);
 
@@ -62,6 +71,8 @@ class AudioPlayer extends Component {
   }
 
   playPauseClick() {
+        self.updateAudio();
+
     console.log("onClick, playing: "  + self.playing);
     if(self.playing){
       self.pause();

@@ -22,7 +22,7 @@ class Audio extends Component {
 
   render() {
     return (
-      <audio className={s.root}>
+      <audio className={s.root} id="audio-current">
         <source src={this.props.src}  type="audio/mp3" />
       </audio>
     );

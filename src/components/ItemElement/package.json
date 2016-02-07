@@ -1,0 +1,6 @@
+{
+  "name": "ItemElement",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ItemElement.js"
+}

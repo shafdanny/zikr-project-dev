@@ -29,11 +29,15 @@ class ListItem extends Component {
   	}
 
   	render() {
+  		var test = function(filename){
+			console.log(filename + "clicked !");
+			return false;
+		}
 
 	    return (
 	      <div className={s.root}>
-		    <List list={this.state.list.audio} mediaType="audio" />
-		    <List list={this.state.list.video} mediaType="video" />
+		    <List list={this.state.list.audio} mediaType="audio"/>
+		    <List list={this.state.list.video} mediaType="video"/>
 	      </div>
 	    );
   }
