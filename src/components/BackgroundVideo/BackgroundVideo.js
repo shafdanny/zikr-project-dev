@@ -18,7 +18,7 @@ class BackgroundVideo extends Component {
   render() {
     return (
       <div className={s.root}>
-        <video loop muted autoPlay poster="img/videoframe.jpg" className={s.root}>
+        <video loop muted autoPlay poster="img/videoframe.jpg" className={s.vid}>
             <source src="https://zippy.gfycat.com/EnergeticHopefulEyas.webm" type="video/webm" />
         </video>
       </div>
