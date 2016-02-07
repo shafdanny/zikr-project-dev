@@ -18,18 +18,28 @@ class ItemElement extends Component {
 		super();
 		this.state = {
 			click: function(name, type){ 
+				console.log(this);
 				console.log(name + " : " + type );
 				if(type === "video"){
 					var videosource = $('video').find('source')[0];
 					console.log(videosource);
 					videosource.setAttribute("src", "video/"+name+"/WEBM/"+name+".webm");
 					document.getElementById('background-video').load();
+					//clear previously highlighted element
+					$('.' + s.vidselected).removeClass(s.vidselected);
+					// highlight selected element
+					$('#'+name).addClass(s.vidselected);
 				}
 				else if(type === "audio"){
 					var audiosource = $('audio').find('source')[0];
 					console.log(audiosource);
 					audiosource.setAttribute("src", "audio/"+name);
+					//clear previously highlighted element
+					$('.' + s.audioselected).removeClass(s.audioselected);
+					// highlight selected element
+					$("[id='"+ name + "']").addClass(s.audioselected);
 				}
+				return false;
 			}
 		}		
 	}
