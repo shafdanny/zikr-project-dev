@@ -10,6 +10,7 @@
 import React, { Component, PropTypes } from 'react';
 import s from './AudioPlayer.scss';
 import withStyles from '../../decorators/withStyles';
+import Audio from '../Audio';
 
 @withStyles(s)
 class AudioPlayer extends Component {
@@ -76,7 +77,7 @@ class AudioPlayer extends Component {
     return (
       <div className={s.root}>
         <button id="btn" onClick={this.playPauseClick}></button>
-        
+        <Audio src={this.props.audioSrc}/>
       </div>
     );
   }

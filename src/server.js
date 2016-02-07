@@ -9,6 +9,7 @@
 
 import 'babel-core/polyfill';
 import path from 'path';
+import fs from 'fs';
 import express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
@@ -25,12 +26,12 @@ const server = global.server = express();
 // -----------------------------------------------------------------------------
 server.use(express.static(path.join(__dirname, 'public')));
 
+
 //
 // Register API middleware
 // -----------------------------------------------------------------------------
 
 server.use('/api/content', require('./api/content'));
-
 
 //
 // Register server-side rendering middleware
