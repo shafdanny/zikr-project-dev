@@ -38,7 +38,7 @@ server.use('/api/content', require('./api/content'));
 server.get('*', async (req, res, next) => {
   try {
     let statusCode = 200;
-    const data = { title: '', description: '', css: '', body: '', entry: assets.main.js };
+    const data = { title: 'Zikr', description: 'The Zikr Project', css: '', body: '', entry: assets.main.js };
     const css = [];
     const context = {
       insertCss: styles => css.push(styles._getCss()),
