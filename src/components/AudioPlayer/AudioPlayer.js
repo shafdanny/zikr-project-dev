@@ -73,7 +73,6 @@ class AudioPlayer extends Component {
 
 
   render() {
-    console.log("render " + this);
     return (
       <div className={s.root}>
         <button id="btn" onClick={this.playPauseClick}></button>
