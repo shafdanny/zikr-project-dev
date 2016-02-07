@@ -15,6 +15,7 @@ import Feedback from '../Feedback';
 import Footer from '../Footer';
 import AudioPlayer from '../AudioPlayer';
 import BackgroundVideo from "../BackgroundVideo";
+import ControlPanelLayout from "../ControlPanelLayout";
 
 class App extends Component {
 
@@ -57,6 +58,7 @@ class App extends Component {
   render() {
     return !this.props.error ? (
       <div>
+        <ControlPanelLayout />
         <BackgroundVideo />
         <Header />
         <AudioPlayer audioSrc="https://shafiqdaniel.com/music/zikrdemo.mp3" nbRepeat='1'/>

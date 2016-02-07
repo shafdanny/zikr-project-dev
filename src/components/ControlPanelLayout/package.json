@@ -1,0 +1,6 @@
+{
+  "name": "ControlPanelLayout",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ControlPanelLayout.js"
+}
