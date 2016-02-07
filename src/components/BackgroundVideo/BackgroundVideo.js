@@ -19,7 +19,7 @@ class BackgroundVideo extends Component {
     return (
       <div className={s.root}>
         <video loop muted autoPlay poster="img/videoframe.jpg" className={s.vid}>
-            <source src="https://zippy.gfycat.com/EnergeticHopefulEyas.webm" type="video/webm" />
+            <source src="video/Agua-natural/Webm/Agua-natural.webm" type="video/webm" />
         </video>
       </div>
     );
