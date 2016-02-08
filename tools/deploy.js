@@ -15,7 +15,7 @@ import fetch from './lib/fetch';
 // For more information visit http://gitolite.com/deploy.html
 const getRemote = (slot) => ({
   name: slot ? slot : 'production',
-  url: `https://github.com/shafdanny/zikrproject.git`,
+  url: `https://github.com/shafdanny/zikr-project-prod.git`,
   website: `http://zikr.herokuapp.com/`,
 });
 
