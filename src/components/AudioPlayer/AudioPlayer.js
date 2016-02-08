@@ -53,7 +53,7 @@ class AudioPlayer extends Component {
           this.state.play();
         } else {
           console.log('end of audio');
-          this.state.pause();
+          pause();
         }
       },
     };
