@@ -8,7 +8,6 @@
  */
  /* global $:false */
 
-
 import React, { Component, PropTypes } from 'react';
 import s from './AudioPlayer.scss';
 import withStyles from '../../decorators/withStyles';
@@ -22,17 +21,54 @@ class AudioPlayer extends Component {
     nbRepeat: PropTypes.number,
   };
 
+  constructor() {
+    super();
+    this.state = {
+      play() {
+        self.audio.play();
+        self.playing = true;
+        document.getElementById('btn').textContent = 'Pause';
+      },
+
+      pause() {
+        self.audio.pause();
+        self.playing = false;
+        document.getElementById('btn').textContent = 'Play';
+      },
+
+      playPauseClick() {
+        self.audio.load();
+        console.log('onClick, playing: ' + self.playing);
+        if (self.playing) {
+          this.state.pause();
+        } else {
+          this.state.play();
+        }
+      },
+
+      endOfAudio() {
+        console.log(self.counter);
+        if (self.counter !== 0) {
+          self.counter = self.counter - 1;
+          this.state.play();
+        } else {
+          console.log('end of audio');
+          this.state.pause();
+        }
+      },
+    };
+  }
+
   componentDidMount() {
-    self = this;
     console.log('mounted');
-    self.updateAudio();
+    this.updateAudio();
 
     // self.audio.src = this.props.audioSrc;
     self.counter = this.props.nbRepeat;
-    self.audio.addEventListener('ended', self.endOfAudio);
+    self.audio.addEventListener('ended', this.state.endOfAudio);
 
     self.counter -= 1;
-    self.pause();
+    this.state.pause();
   }
 
   // Always call this function before doing anything with audio.
@@ -44,43 +80,10 @@ class AudioPlayer extends Component {
     console.log(self.audio);
   }
 
-  endOfAudio() {
-    console.log(self.counter);
-    if (self.counter !== 0) {
-      self.counter = self.counter - 1;
-      self.audio.play();
-    } else {
-      self.pause();
-    }
-  }
-
-  play() {
-    self.audio.play();
-    self.playing = true;
-    document.getElementById('btn').textContent = 'Pause';
-  }
-
-  pause() {
-    self.audio.pause();
-    self.playing = false;
-    document.getElementById('btn').textContent = 'Play';
-  }
-
-  playPauseClick() {
-    self.updateAudio();
-
-    console.log('onClick, playing: ' + self.playing);
-    if (self.playing) {
-      self.pause();
-    } else {
-      self.play();
-    }
-  }
-
   render() {
     return (
       <div className={s.root}>
-        <button id="btn" onClick={this.playPauseClick}></button>
+        <button id="btn" onClick={this.state.playPauseClick.bind(this)}></button>
         <Audio src={this.props.audioSrc}/>
       </div>
     );

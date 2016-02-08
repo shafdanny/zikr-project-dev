@@ -30,16 +30,20 @@ class ItemElement extends Component {
           console.log(videosource);
           videosource.setAttribute('src', 'video/' + name + '/WEBM/' + name + '.webm');
           document.getElementById('background-video').load();
+
           // clear previously highlighted element
           $('.' + s.vidselected).removeClass(s.vidselected);
+
           // highlight selected element
           $('#' + name).addClass(s.vidselected);
         } else if (type === 'audio') {
           const audiosource = $('audio').find('source')[0];
           console.log(audiosource);
           audiosource.setAttribute('src', 'audio/' + name);
+
           // clear previously highlighted element
           $('.' + s.audioselected).removeClass(s.audioselected);
+
           // highlight selected element
           $("[id='" + name + "']").addClass(s.audioselected);
         }
@@ -50,7 +54,7 @@ class ItemElement extends Component {
 
   click = function () {
     console.log('clicked');
-  }
+  };
 
   render() {
     return (

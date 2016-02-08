@@ -11,7 +11,6 @@ import React, { Component } from 'react';
 import s from './BackgroundVideo.scss';
 import withStyles from '../../decorators/withStyles';
 
-
 @withStyles(s)
 class BackgroundVideo extends Component {
 
@@ -24,7 +23,6 @@ class BackgroundVideo extends Component {
       </div>
     );
   }
-
 }
 
 export default BackgroundVideo;

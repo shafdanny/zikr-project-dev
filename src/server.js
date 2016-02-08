@@ -19,12 +19,10 @@ import { port } from './config';
 
 const server = global.server = express();
 
-
 //
 // Register Node.js middleware
 // -----------------------------------------------------------------------------
 server.use(express.static(path.join(__dirname, 'public')));
-
 
 //
 // Register API middleware
@@ -32,7 +30,6 @@ server.use(express.static(path.join(__dirname, 'public')));
 
 server.use('/api/content', require('./api/content'));
 server.use('/api/media', require('./api/media'));
-
 
 //
 // Register server-side rendering middleware
