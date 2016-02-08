@@ -37,7 +37,7 @@ class Html extends Component {
   }
 
   render() {
-    console.log('rendering html?'  + this.props.title);
+    console.log('rendering html?' + this.props.title);
     return (
       <html className="no-js" lang="">
       <head>

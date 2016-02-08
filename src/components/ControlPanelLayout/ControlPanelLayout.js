@@ -18,7 +18,6 @@ class ControlPanelLayout extends Component {
   render() {
     return (
       <div className={s.root}>
-        
       </div>
     );
   }
