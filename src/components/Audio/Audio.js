@@ -13,17 +13,14 @@ import withStyles from '../../decorators/withStyles';
 
 @withStyles(s)
 class Audio extends Component {
-
-
   static propTypes = {
-    
+    src: PropTypes.string.isRequired,
   };
-
 
   render() {
     return (
       <audio className={s.root} id="audio-current">
-        <source src={this.props.src}  type="audio/mp3" />
+        <source src={this.props.src} type="audio/mp3" />
       </audio>
     );
   }

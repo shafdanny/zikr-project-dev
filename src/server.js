@@ -9,7 +9,6 @@
 
 import 'babel-core/polyfill';
 import path from 'path';
-import fs from 'fs';
 import express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
@@ -51,7 +50,7 @@ server.get('*', async (req, res, next) => {
     };
 
     await Router.dispatch({ path: req.path, query: req.query, context }, (state, component) => {
-        data.body = ReactDOM.renderToString(component);
+      data.body = ReactDOM.renderToString(component);
       data.css = css.join('');
     });
 
@@ -68,5 +67,4 @@ server.get('*', async (req, res, next) => {
 server.listen(port, () => {
   /* eslint-disable no-console */
   console.log(`The server is running at http://localhost:${port}/`);
-
 });
