@@ -10,31 +10,30 @@
 import React, { Component, PropTypes } from 'react';
 import s from './List.scss';
 import withStyles from '../../decorators/withStyles';
-import ItemElement from '../ItemElement'
+import ItemElement from '../ItemElement';
 
 @withStyles(s)
 class List extends Component {
 
-	static propTypes = {
-	    mediaType: PropTypes.string,
-	    list: PropTypes.array,
-	};
+  static propTypes = {
+    mediaType: PropTypes.string,
+    list: PropTypes.array,
+  };
 
-  	render() {
-
-	    return (
-	      <div className={this.props.mediaType}>
-	      <ul>
-	     	{this.props.list.map(function(listValue){
-	     		return ( 
-            		<li>
-            			<ItemElement name={listValue.fileName} type={listValue.type} />
-            		</li>
-            	);
+  render() {
+    return (
+      <div className={this.props.mediaType}>
+        <ul>
+          {this.props.list.map(function (listValue) {
+            return (
+              <li>
+                <ItemElement name={listValue.fileName} type={listValue.type} />
+              </li>
+            );
           })}
-	      </ul>
-	      </div>
-	    );
+        </ul>
+      </div>
+    );
   }
 }
 
