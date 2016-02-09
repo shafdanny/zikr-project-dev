@@ -10,6 +10,5 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-deploy:
-  skip_cleanup: true
+script: npm run build -- --release
 after_success: npm run deploy
