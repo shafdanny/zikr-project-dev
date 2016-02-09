@@ -11,5 +11,5 @@ addons:
     packages:
       - g++-4.8
 deploy:
-	skip_cleanup: true
+  skip_cleanup: true
 after_success: npm run deploy
