@@ -17,6 +17,10 @@ class Audio extends Component {
     src: PropTypes.string.isRequired,
   };
 
+  componentDidMount() {
+    console.log('audio mounted');
+  }
+
   render() {
     return (
       <audio className={s.root} id="audio-current">

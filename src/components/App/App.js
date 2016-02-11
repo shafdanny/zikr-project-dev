@@ -12,10 +12,8 @@ import emptyFunction from 'fbjs/lib/emptyFunction';
 import s from './App.scss';
 import Header from '../Header';
 import Footer from '../Footer';
-import AudioPlayer from '../AudioPlayer';
 import BackgroundVideo from '../BackgroundVideo';
 import ControlPanelLayout from '../ControlPanelLayout';
-import ListItem from '../ListItem';
 
 class App extends Component {
 
@@ -61,9 +59,7 @@ class App extends Component {
         <ControlPanelLayout />
         <BackgroundVideo />
         <Header />
-        <AudioPlayer audioSrc="audio/Munif Ahmad - Zikir Lailahaillallah & Astaghfirullah (Official Music Audio).mp3" nbRepeat="1"/>
         <Footer />
-        <ListItem />
       </div>
     ) : this.props.children;
   }
